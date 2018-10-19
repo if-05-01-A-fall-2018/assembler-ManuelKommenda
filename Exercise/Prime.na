@@ -1,0 +1,86 @@
+"Please enter a number: You entered a negative number"
+inc 8
+
+# print Please enter a number:
+lit 0
+lit 23
+lit 24
+out 2
+
+# read input
+la 0 32
+la 0 36
+in 0
+
+# if(input is incorrect)
+lv 0 32
+lit 0
+rel 1
+tjmp .false_input
+
+# divisor
+la 0 36
+lit 2
+sto
+jmp .calculate
+
+# increase divisor
+.increase_divisor
+la 0 36
+lv 0 36
+lit 1
+add
+sto
+
+# calculate
+.calculate
+lv 0 32
+lv 0 36
+mod
+lit 0
+rel 2
+fjmp .increase_divisor
+la 0 32
+lv 0 32
+lv 0 36
+div
+sto
+
+# output
+lv 0 36
+lit 1
+out 0
+out 3
+
+# check if last
+lv 0 32
+lv 0 36
+mod
+lit 0
+rel 5
+tjmp .last_check
+jmp .calculate
+
+# output_false
+.false_input
+lit 23
+lit 29
+lit 30
+out 2
+out 3
+
+.last_check
+# is divisor 2
+lv 0 36
+lit 2
+rel 2
+tjmp .increase_divisor
+
+# output lastnumber
+lv 0 32
+lit 1
+out 0
+out 3
+
+.end
+halt

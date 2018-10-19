@@ -1,0 +1,42 @@
+"Please enter a number: "
+
+inc 8
+
+# print Please enter a number:
+lit 0
+lit 23
+lit 24
+out 2
+
+# read input
+la 0 32
+la 0 36
+in 0
+
+# set output value
+la 0 36
+lit 0
+sto
+
+
+# the loop
+.start_of_loop
+la 0 36
+lv 0 36
+lit 1
+add
+sto
+
+# output in the loop
+lv 0 36
+lit 1
+out 0
+out 3
+
+# if(number1 == number2)
+lv 0 32
+lv 0 36
+rel 2
+fjmp .start_of_loop
+
+halt

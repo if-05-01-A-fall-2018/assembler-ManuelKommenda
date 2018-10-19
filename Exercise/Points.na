@@ -1,0 +1,57 @@
+"Maximum Points:Points you got:You had %"
+
+inc 12
+
+# pirnt Maximum Points:
+lit 0
+lit 15
+lit 16
+out 2
+
+# read input
+la 0 32
+la 0 36
+in 0
+
+# print Points you got:
+lit 15
+lit 15
+lit 16
+out 2
+
+# read int
+la 0 36
+la 0 40
+in 0
+out 3
+
+# Calculate
+la 0 40
+lv 0 36
+lit 100
+mul
+lv 0 32
+div
+sto
+
+# output
+
+#print You had:
+lit 30
+lit 7
+lit 8
+out 2
+
+# print calculated number
+lv 0 40
+lit 1
+out 0
+
+# print %
+lit 38
+lit 1
+lit 2
+out 2
+out 3
+
+halt
